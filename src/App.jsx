@@ -29,6 +29,10 @@ function App() {
     role: "Frontend Developer",
     location: "Lahore"
   };
+// event practice
+  function handleClick(event) {
+    console.log(event.target);
+  }
 
   return (
     <div>
@@ -42,6 +46,10 @@ function App() {
       </button>
       <button onClick={() => setCount(count - 1)}>
         Decrease
+      </button>
+      {/* event practice */}
+      <button onClick={handleClick}>
+        Click
       </button>
     </div>
   );
