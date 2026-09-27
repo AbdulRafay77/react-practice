@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function UserCard({ name, age, role, location }) {
   const message = "Hello";
 
@@ -12,6 +14,8 @@ function UserCard({ name, age, role, location }) {
 }
 
 function App() {
+  const [count, setCount] = useState(0);
+
   const user1 = {
     name: "Rafay",
     age: 25,
@@ -30,6 +34,15 @@ function App() {
     <div>
       <UserCard {...user1}/>
       <UserCard {...user2}/>
+
+      <p>{count}</p>
+
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
+      <button onClick={() => setCount(count - 1)}>
+        Decrease
+      </button>
     </div>
   );
 }
