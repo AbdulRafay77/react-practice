@@ -15,6 +15,7 @@ function UserCard({ name, age, role, location }) {
 
 function App() {
   const [count, setCount] = useState(0);
+  const [name, setName] = useState("");
 
   const user1 = {
     name: "Rafay",
@@ -37,6 +38,9 @@ function App() {
   // function handleChange(event) {
   //   console.log(event.target.value);
   // }
+  function handleChange(event) {
+    setName(event.target.value);
+  }
 
   return (
     <div>
@@ -57,6 +61,9 @@ function App() {
       </button> */}
       {/* input event practice */}
       {/* <input onChange={handleChange}/> */}
+      <input onChange={handleChange} />
+
+      <p>Hello {name}</p>
     </div>
   );
 }
