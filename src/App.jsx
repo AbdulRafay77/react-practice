@@ -42,6 +42,8 @@ function App() {
     setName(event.target.value);
   }
 
+  const products = ["Laptop", "Phone", "Mouse"];
+
   return (
     <div>
       <UserCard {...user1}/>
@@ -64,6 +66,10 @@ function App() {
       <input onChange={handleChange} />
 
       <p>Hello {name}</p>
+
+      {products.map(product => (
+        <p>{product}</p>
+      ))}
     </div>
   );
 }
