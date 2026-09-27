@@ -42,7 +42,12 @@ function App() {
     setName(event.target.value);
   }
 
-  const products = ["Laptop", "Phone", "Mouse"];
+  // const products = ["Laptop", "Phone", "Mouse"];
+  const products = [
+    { id: 1, name: "Laptop", price: 1000 },
+    { id: 2, name: "Phone", price: 500 },
+    { id: 3, name: "Mouse", price: 50 }
+  ];
 
   return (
     <div>
@@ -67,8 +72,15 @@ function App() {
 
       <p>Hello {name}</p>
 
-      {products.map(product => (
+      {/* {products.map(product => (
         <p>{product}</p>
+      ))} */}
+
+      {products.map(product => (
+        <div key={product.id}>
+          <h2>{product.name}</h2>
+          <p>${product.price}</p>
+        </div>
       ))}
     </div>
   );
