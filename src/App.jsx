@@ -28,19 +28,8 @@ function App() {
 
   return (
     <div>
-      <UserCard
-        name={user1.name}
-        age={user1.age}
-        role={user1.role}
-        location={user1.location}
-      />
-
-      <UserCard
-        name={user2.name}
-        age={user2.age}
-        role={user2.role}
-        location={user2.location}
-      />
+      <UserCard {...user1}/>
+      <UserCard {...user2}/>
     </div>
   );
 }
