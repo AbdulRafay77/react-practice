@@ -30,9 +30,13 @@ function App() {
     location: "Lahore"
   };
 // event practice
-  function handleClick(event) {
-    console.log(event.target);
-  }
+  // function handleClick(event) {
+  //   console.log(event.target.value);
+  // }
+  // input event practice
+  // function handleChange(event) {
+  //   console.log(event.target.value);
+  // }
 
   return (
     <div>
@@ -48,9 +52,11 @@ function App() {
         Decrease
       </button>
       {/* event practice */}
-      <button onClick={handleClick}>
+      {/* <button onClick={handleClick}>
         Click
-      </button>
+      </button> */}
+      {/* input event practice */}
+      {/* <input onChange={handleChange}/> */}
     </div>
   );
 }
