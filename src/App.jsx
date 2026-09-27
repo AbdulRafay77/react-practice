@@ -44,10 +44,16 @@ function App() {
 
   // const products = ["Laptop", "Phone", "Mouse"];
   const products = [
-    { id: 1, name: "Laptop", price: 1000 },
-    { id: 2, name: "Phone", price: 500 },
-    { id: 3, name: "Mouse", price: 50 }
+    // { id: 1, name: "Laptop", price: 1000 },
+    // { id: 2, name: "Phone", price: 500 },
+    // { id: 3, name: "Mouse", price: 50 }
   ];
+
+  function ProductList({ products }){
+    if(products.length ===0){
+      return <p>No products found.</p>
+    }
+  }
 
   const loading = true;
 
@@ -77,7 +83,7 @@ function App() {
       {/* {products.map(product => (
         <p>{product}</p>
       ))} */}
-
+      <ProductList products={products} />
       {products.map(product => (
         <div key={product.id}>
           <h2>{product.name}</h2>
