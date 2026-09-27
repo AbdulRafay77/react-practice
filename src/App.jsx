@@ -49,6 +49,8 @@ function App() {
     { id: 3, name: "Mouse", price: 50 }
   ];
 
+  const loading = true;
+
   return (
     <div>
       <UserCard {...user1}/>
@@ -82,6 +84,13 @@ function App() {
           <p>${product.price}</p>
         </div>
       ))}
+
+      {loading ? (
+        <p>loading...</p>
+      ) : (
+        <p>Product loaded</p>
+      )}
+
     </div>
   );
 }
