@@ -126,6 +126,8 @@ function App() {
 
       <h1>Hello</h1>
 
+      <input type="text" />
+
     </div>
   );
 }
