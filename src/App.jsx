@@ -17,6 +17,28 @@ function UserCard({ name, age, role, location }) {
 function App() {
   const [count, setCount] = useState(0);
   const [name, setName] = useState("");
+  // const [products, setProducts] = useState([]);
+
+  // useEffect(() => {
+  //   async function loadProducts() {
+  //     const data = [
+        //   { id: 1, name: "Laptop", price: 1000 },
+        //   { id: 2, name: "Phone", price: 500 },
+        //   { id: 3, name: "Mouse", price: 50 }
+        // ];
+        // setProducts(data);
+  //   }
+
+  //   loadProducts();
+  // }, [])
+
+  // return(
+  //   <div>
+  //     {products.map(product => (
+  //       <p key={product._id}>{product.name}</p>
+  //     ))}
+  //   </div>
+  // )
 
   const user1 = {
     name: "Rafay",
