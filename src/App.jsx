@@ -38,8 +38,9 @@ function App() {
 
       {users.map(user => (
         <div key={user.id}>
-          <h2>{user.name}</h2>
+          <h3>{user.name}</h3>
           <p>{user.email}</p>
+          <p>{user.address.city}</p>
         </div>
       ))}
     </div>
