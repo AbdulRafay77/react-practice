@@ -149,19 +149,32 @@
 import { useState } from "react";
 
 function App(){
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  })
+
+  function handleChange(event){
+    const { name, value } = event.target;
+
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  }
 
   function handleSubmit(){
     event.preventDefault();
 
-    console.log(email);
-    console.log(password);
+    console.log(formData.email);
+    console.log(formData.password);
   }
 
   return(
     <div>
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <input 
           type="email"
           value={email}
@@ -171,6 +184,22 @@ function App(){
           type="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
+        />
+
+        <button type="submit">Login</button>
+      </form> */}
+      
+      <form onSubmit={handleSubmit}>
+        <input 
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+
+        <input 
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
         />
 
         <button type="submit">Login</button>
