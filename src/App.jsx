@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 
 function UserCard({ name, age, role, location }) {
   const message = "Hello";
@@ -44,9 +45,9 @@ function App() {
 
   // const products = ["Laptop", "Phone", "Mouse"];
   const products = [
-    // { id: 1, name: "Laptop", price: 1000 },
-    // { id: 2, name: "Phone", price: 500 },
-    // { id: 3, name: "Mouse", price: 50 }
+    { id: 1, name: "Laptop", price: 1000 },
+    { id: 2, name: "Phone", price: 500 },
+    { id: 3, name: "Mouse", price: 50 }
   ];
 
   function ProductList({ products }){
@@ -56,6 +57,10 @@ function App() {
   }
 
   const loading = true;
+
+  useEffect(() => {
+    console.log("App rendered");
+  });
 
   return (
     <div>
@@ -96,6 +101,8 @@ function App() {
       ) : (
         <p>Product loaded</p>
       )}
+
+      <h1>Hello</h1>
 
     </div>
   );
