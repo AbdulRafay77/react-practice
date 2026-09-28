@@ -59,8 +59,8 @@ function App() {
   const loading = true;
 
   useEffect(() => {
-    console.log("App rendered");
-  });
+    console.log("Count Changed");
+  }, [count]);
 
   return (
     <div>
