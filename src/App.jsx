@@ -12,15 +12,17 @@ function App(){
   }
   return(
     <form onSubmit={handleSubmit}>
-      <p>Email:</p>
       <input
         type="email"
+        name="email"
+        placeholder="Enter your email"
         value={email}
         onChange={(event) => setEmail(event.target.value)}
       />
-      <p>Password:</p>
       <input
         type="password"
+        name="password"
+        placeholder="Enter your password"
         value={password}
         onChange={(event) => setPassword(event.target.value)}
       />
