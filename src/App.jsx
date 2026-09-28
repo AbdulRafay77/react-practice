@@ -1,34 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App(){
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  
-  function handleSubmit(event){
-    event.preventDefault();
+  const [users, setUsers] = useState([]);
 
-    console.log(email);
-    console.log(password);
-  }
+  useEffect(() => {
+    async function loadUsers() {
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/users"
+      );
+
+      setUsers(response.data);
+    }
+
+    loadUsers();
+  }, []);
+
   return(
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        name="email"
-        placeholder="Enter your email"
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="Enter your password"
-        value={password}
-        onChange={(event) => setPassword(event.target.value)}
-      />
+    <div>
+      <h1>Users</h1>
 
-      <button type="submit">Login</button>
-    </form>
+      {users.map(user => {
+        <div key={user.id}>
+          <h2>{user.name}</h2>
+          <p>{user.email}</p>
+        </div>
+      })}
+    </div>
   );
 }
 
