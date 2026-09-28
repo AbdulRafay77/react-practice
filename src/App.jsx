@@ -3,18 +3,34 @@ import axios from "axios";
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     async function loadUsers() {
-      const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/users"
-      );
+      try{
+        const response = await axios.get(
+          "https://jsonplaceholder.typicode.com/users"
+        );
 
-      setUsers(response.data);
+        setUsers(response.data);
+      } catch (error) {
+        setError("Failed to load users");
+      } finally {
+        setLoading(false);
+      }      
     }
 
     loadUsers();
   }, []);
+
+  if (loading) {
+    return <p>Loading...</p>
+  }
+
+  if (error) {
+    return <p>{error}</p>
+  }
 
   return (
     <div>
